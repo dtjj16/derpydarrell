@@ -4,7 +4,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 
 
-#1. Create a Mock Dataset
+#Create a Mock Dataset
 # Define the holidays and special_days
 holidays = ['2022-01-01', '2022-01-26']  # New Year and a random date for demonstration
 special_days = ['2022-01-10', '2022-01-20']  # Two random dates for demonstration
@@ -35,7 +35,7 @@ y_train = train['chicken_cooked'].values.astype('float32')
 X_test = test.drop(['date', 'chicken_cooked'], axis=1).values.astype('float32')
 y_test = test['chicken_cooked'].values.astype('float32')
 
-# 3. Build a Neural Network for Demand Forecasting
+#Build a Neural Network for Demand Forecasting
 model = tf.keras.Sequential([
     tf.keras.layers.Dense(128, activation='relu', input_shape=(X_train.shape[1],)),
     tf.keras.layers.Dropout(0.2),
